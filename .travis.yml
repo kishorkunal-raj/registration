@@ -4,3 +4,7 @@ script:
 before_install:
             - export BUILD_LOCALLY=1
             - - if [ "$TRAVIS_ARCH" = "ppc64le" -a "$ENABLE_UCS4" = "--enable-ucs4" ]; then sudo apt-get update ; sudo apt-get -y upgrade ; wget https://dl.google.com/go/go1.13.3.linux-ppc64le.tar.gz ; sudo tar -xvf go1.13.3.linux-ppc64le.tar.gz ; sudo mv go /usr/local ;export GOROOT=/usr/local/go ; export GOPATH=$HOME/registration ; export PATH=$GOPATH/bin:$GOROOT/bin:$PATH; fi
+
+arch:
+  - amd64
+  - ppc64le
